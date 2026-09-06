@@ -1,0 +1,59 @@
+[*] Fetching config from https://raw.githubusercontent.com/hydraponique/roscomvpn-routing/refs/heads/main/HAPP/DEFAULT.JSON ...
+
+[+] QR code saved to: C:\Users\Samvel\Documents\roscomvpn-routing\test_output\v2rayng_routing_qr.png
+[+] Data length: 702 chars
+
+JSON rules (copy to clipboard for manual import):
+--------------------------------------------------
+[
+  {
+    "remarks": "1. BLOCK (Ads & Tracking)",
+    "outboundTag": "block",
+    "enabled": true,
+    "domain": [
+      "geosite:win-spy",
+      "geosite:torrent",
+      "geosite:category-ads"
+    ]
+  },
+  {
+    "remarks": "2. PROXY (VPN Required)",
+    "outboundTag": "proxy",
+    "enabled": true,
+    "domain": [
+      "geosite:github",
+      "geosite:twitch-ads",
+      "geosite:youtube",
+      "geosite:telegram"
+    ]
+  },
+  {
+    "remarks": "3. DIRECT (Russia & LAN)",
+    "outboundTag": "direct",
+    "enabled": true,
+    "domain": [
+      "geosite:private",
+      "geosite:category-ru",
+      "geosite:whitelist",
+      "geosite:microsoft",
+      "geosite:apple",
+      "geosite:google-play",
+      "geosite:epicgames",
+      "geosite:riot",
+      "geosite:escapefromtarkov",
+      "geosite:steam",
+      "geosite:origin",
+      "geosite:twitch",
+      "geosite:pinterest",
+      "geosite:faceit"
+    ],
+    "ip": [
+      "geoip:private",
+      "geoip:direct"
+    ]
+  }
+]
+--------------------------------------------------
+
+[!] Remember to set Domain Strategy to 'IPIfNonMatch' in
+    v2RayNG Settings before importing these rules.

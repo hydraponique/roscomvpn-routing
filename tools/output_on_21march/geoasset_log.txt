@@ -1,0 +1,7 @@
+[+] geoip.dat: C:\Users\Samvel\Documents\roscomvpn-routing\test_output\geoip.dat.png
+    URL: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/geoip.dat
+[+] geosite.dat: C:\Users\Samvel\Documents\roscomvpn-routing\test_output\geosite.dat.png
+    URL: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/geosite.dat
+
+Scan these QR codes in v2RayNG -> Settings -> Geoasset update
+to set the correct geoasset download URLs.

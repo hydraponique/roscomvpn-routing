@@ -70,6 +70,7 @@
 <tbody>
 <tr><td><code>default.yaml</code></td><td>DEFAULT конфиг для добавления в приложение вручную и 40+ rule-провайдерами</td></tr>
 <tr><td><code>template_remnawave.yaml</code></td><td>DEFAULT конфиг для интеграции с панелью Remnawave</td></tr>
+<tr><td><code>template_3x-ui.yaml</code></td><td>Конфиг для Mihomo подписки в панели 3x-ui</td></tr>
 </tbody>
 </table>
 

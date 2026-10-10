@@ -19,13 +19,14 @@
 #   ⛔ Блок      — блокировка (REJECT)
 #   ⏭️ Пропуск   — PASS (передать следующему правилу)
 #
-# Rule-sets (репозитории hydraponique / RoscomVPN на GitHub):
+# Rule-sets (репозитории hydraponique / RoscomVPN и MetaCubeX на GitHub):
 #   • Реклама и слежка Windows              → REJECT-DROP
 #   • Торренты (домены/клиенты)             → DIRECT
 #   • Microsoft, Apple                      → DIRECT
 #   • Российские домены (category-ru), ru-apps → DIRECT
 #   • Twitch, Pinterest                     → DIRECT
 #   • YouTube, Telegram, GitHub             → PROXY
+#   • Discord (домены/процессы)             → 💬 Discord.exe
 #   • Игровые сервисы                       → 🎮 Игры
 #   • Остальное                             → PROXY
 #
@@ -351,12 +352,28 @@ rule-providers:
     path: ./ruleset/youtube.mrs
     proxy: ⚡️ Авто
     interval: 86400
+  discord:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discord.mrs
+    path: ./ruleset/discord.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
   telegram:
     type: http
     behavior: domain
     format: mrs
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/telegram.mrs
     path: ./ruleset/telegram.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  telegram-ips:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs
+    path: ./ruleset/telegram-ips.mrs
     proxy: ⚡️ Авто
     interval: 86400
   win-spy:
@@ -426,7 +443,9 @@ rules:
   - RULE-SET,google-play,PROXY
   - RULE-SET,twitch-ads,PROXY                      # домены Twitch Ads — через PROXY (фикс качества)
   - RULE-SET,youtube,📺 Youtube
+  - RULE-SET,telegram-ips,PROXY,no-resolve          # прямые подключения Telegram по IP
   - RULE-SET,telegram,PROXY
+  - RULE-SET,discord,💬 Discord.exe               # работает и без определения процесса
   - RULE-SET,github,PROXY
 
   # --- Игровые платформы и сервисы → 🎮 Игры (по умолчанию DIRECT, можно переключить) ---
@@ -451,8 +470,8 @@ rules:
   - RULE-SET,torrent-clients,DIRECT                # торрент-клиенты по процессу
 
   # --- Приложения по имени процесса ---
-  - PROCESS-NAME-REGEX,discord,💬 Discord.exe
-  - PROCESS-NAME-REGEX,vesktop,💬 Discord.exe
+  - PROCESS-NAME-REGEX,(?i)discord,💬 Discord.exe
+  - PROCESS-NAME-REGEX,(?i)vesktop,💬 Discord.exe
 
   # --- Широкие категории ---
   - RULE-SET,games,🎮 Игры                         # общая игровая категория

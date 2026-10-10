@@ -318,12 +318,28 @@ rule-providers:
     path: ./ruleset/youtube.mrs
     proxy: ⚡️ Авто
     interval: 86400
+  discord:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discord.mrs
+    path: ./ruleset/discord.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
   telegram:
     type: http
     behavior: domain
     format: mrs
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/telegram.mrs
     path: ./ruleset/telegram.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  telegram-ips:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs
+    path: ./ruleset/telegram-ips.mrs
     proxy: ⚡️ Авто
     interval: 86400
   win-spy:
@@ -386,7 +402,9 @@ rules:
   - RULE-SET,google-play,PROXY
   - RULE-SET,twitch-ads,PROXY
   - RULE-SET,youtube,📺 Youtube
+  - RULE-SET,telegram-ips,PROXY,no-resolve
   - RULE-SET,telegram,PROXY
+  - RULE-SET,discord,💬 Discord.exe
   - RULE-SET,github,PROXY
   - RULE-SET,epicgames,🎮 Игры
   - RULE-SET,origin,🎮 Игры
@@ -401,8 +419,8 @@ rules:
   - RULE-SET,category-ru,DIRECT
   - RULE-SET,whitelist,DIRECT
   - RULE-SET,torrent-clients,DIRECT
-  - PROCESS-NAME-REGEX,discord,💬 Discord.exe
-  - PROCESS-NAME-REGEX,vesktop,💬 Discord.exe
+  - PROCESS-NAME-REGEX,(?i)discord,💬 Discord.exe
+  - PROCESS-NAME-REGEX,(?i)vesktop,💬 Discord.exe
   - RULE-SET,games,🎮 Игры
   - RULE-SET,ru-apps,DIRECT
   - RULE-SET,direct-ips,DIRECT

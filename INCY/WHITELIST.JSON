@@ -20,6 +20,7 @@
   "RouteOrder": "block-proxy-direct",
   "DirectSites": [
     "geosite:private",
+    "geosite:push",
     "geosite:whitelist"
   ],
   "DirectIp": [

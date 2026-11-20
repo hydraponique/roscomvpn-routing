@@ -1,0 +1,291 @@
+proxy-groups:
+- name: 🛡️ VPN
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png
+  type: select
+  proxies:
+  - ⚡️ Авто
+  include-all: true
+  url: https://www.gstatic.com/generate_204
+- name: 📺 Youtube
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
+  type: select
+  include-all: true
+  proxies:
+    - 🛡️ VPN
+- name: 💬 Discord.exe
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Discord.png
+  type: select
+  include-all: true
+  proxies:
+  - 🛡️ VPN
+- name: 🎮 Игры
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
+  type: select
+  include-all: true
+  proxies:
+  - 🔓 Без VPN
+  - 🛡️ VPN
+- name: ⚡️ Авто
+  type: url-test
+  tolerance: 150
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  include-all: true
+  hidden: true
+- name: PROXY
+  type: select
+  hidden: true
+  proxies:
+  - 🛡️ VPN
+- name: 🔓 Без VPN
+  type: select
+  hidden: true
+  proxies:
+  - DIRECT
+- name: ⛔ Блок
+  type: select
+  hidden: true
+  proxies:
+  - REJECT
+rule-providers:
+  private-domains:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/private.mrs
+    path: ./ruleset/geosite-private.mrs
+    proxy: ⚡️ Авто
+    interval: 2592000
+  category-ru:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ru.mrs
+    path: ./ruleset/category-ru.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  whitelist:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/whitelist.mrs
+    path: ./ruleset/whitelist.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  microsoft:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/microsoft.mrs
+    path: ./ruleset/microsoft.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  apple:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/apple.mrs
+    path: ./ruleset/apple.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  google-play:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/google-play.mrs
+    path: ./ruleset/google-play.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  epicgames:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/epicgames.mrs
+    path: ./ruleset/epicgames.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  origin:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/origin.mrs
+    path: ./ruleset/origin.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  riot:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/riot.mrs
+    path: ./ruleset/riot.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  escapefromtarkov:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/escapefromtarkov.mrs
+    path: ./ruleset/escapefromtarkov.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  steam:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/steam.mrs
+    path: ./ruleset/steam.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  twitch:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/twitch.mrs
+    path: ./ruleset/twitch.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  pinterest:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/pinterest.mrs
+    path: ./ruleset/pinterest.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  faceit:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/faceit.mrs
+    path: ./ruleset/faceit.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  private-ips:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/mihomo/private.mrs
+    path: ./ruleset/geoip-private.mrs
+    proxy: ⚡️ Авто
+    interval: 2592000
+  direct-ips:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/mihomo/direct.mrs
+    path: ./ruleset/direct-ips.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  github:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/github.mrs
+    path: ./ruleset/github.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  twitch-ads:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/twitch-ads.mrs
+    path: ./ruleset/twitch-ads.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  youtube:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/youtube.mrs
+    path: ./ruleset/youtube.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  telegram:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/telegram.mrs
+    path: ./ruleset/telegram.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  win-spy:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/win-spy.mrs
+    path: ./ruleset/win-spy.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  torrent-domains:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/torrent.mrs
+    path: ./ruleset/torrent-domains.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  category-ads:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ads.mrs
+    path: ./ruleset/category-ads.mrs
+    proxy: ⚡️ Авто
+    interval: 86400
+  torrent-clients:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/legiz-ru/mihomo-rule-sets/main/other/torrent-clients.yaml
+    path: ./ruleset/torrent-clients.yaml
+    proxy: ⚡️ Авто
+    interval: 86400
+  games:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/roscomvpn/custom-category/release/mihomo/games.yaml
+    path: ./ruleset/games.yaml
+    proxy: ⚡️ Авто
+    interval: 86400
+  ru-apps:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/roscomvpn/custom-category/release/mihomo/ru-apps.yaml
+    path: ./ruleset/ru-apps.yaml
+    proxy: ⚡️ Авто
+    interval: 86400
+
+rules:
+  - RULE-SET,private-ips,DIRECT,no-resolve
+  - IP-CIDR,::/0,REJECT-DROP,no-resolve
+  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT-DROP
+  - RULE-SET,private-domains,DIRECT
+  - RULE-SET,category-ads,REJECT-DROP
+  - RULE-SET,win-spy,REJECT-DROP
+  - RULE-SET,torrent-domains,DIRECT
+  - RULE-SET,google-play,PROXY
+  - RULE-SET,twitch-ads,PROXY
+  - RULE-SET,youtube,📺 Youtube
+  - RULE-SET,telegram,PROXY
+  - RULE-SET,github,PROXY
+  - RULE-SET,epicgames,🎮 Игры
+  - RULE-SET,origin,🎮 Игры
+  - RULE-SET,riot,🎮 Игры
+  - RULE-SET,escapefromtarkov,🎮 Игры
+  - RULE-SET,steam,🎮 Игры
+  - RULE-SET,faceit,🎮 Игры
+  - RULE-SET,twitch,DIRECT
+  - RULE-SET,microsoft,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,pinterest,DIRECT
+  - RULE-SET,category-ru,DIRECT
+  - RULE-SET,whitelist,DIRECT
+  - RULE-SET,torrent-clients,DIRECT
+  - PROCESS-NAME-REGEX,discord,💬 Discord.exe
+  - PROCESS-NAME-REGEX,vesktop,💬 Discord.exe
+  - RULE-SET,games,🎮 Игры
+  - RULE-SET,ru-apps,DIRECT
+  - RULE-SET,direct-ips,DIRECT
+  - MATCH,PROXY
